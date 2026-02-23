@@ -1,0 +1,81 @@
+[
+    {
+        "name": "ต้มยำกุ้ง",
+        "price": 180,
+        "category": "อาหารจานหลัก",
+        "description": "ต้มยำกุ้งแม่น้ำรสจัดจ้าน เครื่องเต็ม",
+        "popular": true,
+        "spicy": 3,
+        "sequence": 1,
+        "image": "https://owncloud.odoothaicloud.com/s/7tGPDQboWoIuu8Y/download"
+    },
+    {
+        "name": "ส้มตำไทย",
+        "price": 60,
+        "category": "อาหารจานหลัก",
+        "description": "ส้มตำแบบไทยดั้งเดิม รสชาติกลมกล่อม",
+        "popular": true,
+        "spicy": 2,
+        "sequence": 1,
+        "image": "https://owncloud.odoothaicloud.com/s/9L99wJIBShhcdcY/download"
+    },
+    {
+        "name": "ผัดไทยกุ้งสด",
+        "price": 120,
+        "category": "อาหารจานหลัก",
+        "description": "ผัดไทยใส่กุ้งสดๆ หอมกลิ่นใบกะเพรา",
+        "popular": true,
+        "spicy": 1,
+        "sequence": 1,
+        "image": "https://owncloud.odoothaicloud.com/s/iwiGLEWlpMPmK0g/download"
+    },
+    {
+        "name": "ข้าวผัดปู",
+        "price": 150,
+        "category": "อาหารจานหลัก",
+        "description": "ข้าวผัดปูเนื้อแน่น หอมกลิ่นปลาหมึก",
+        "popular": false,
+        "spicy": 1,
+        "image": "https://owncloud.odoothaicloud.com/s/qsikvxSb05nHN3y/download"
+    },
+    {
+        "name": "แกงเขียวหวานไก่",
+        "price": 100,
+        "category": "อาหารจานหลัก",
+        "description": "แกงเขียวหวานไก่เนื้ออ่อน กะทิหอมหวาน",
+        "popular": false,
+        "spicy": 2,
+        "sequence": 1,
+        "image": "https://owncloud.odoothaicloud.com/s/94EcXB6lNNItzUY/download"
+    },
+    {
+        "name": "น้ำมะนาวปั่น",
+        "price": 40,
+        "category": "เครื่องดื่ม",
+        "description": "น้ำมะนาวปั่นสดชื่น เย็นฉ่ำ",
+        "popular": false,
+        "spicy": 0,
+        "sequence": 2,
+        "image": "https://owncloud.odoothaicloud.com/s/Q3Q93ueYSiUsNAo/download"
+    },
+    {
+        "name": "ชาเย็น",
+        "price": 35,
+        "category": "เครื่องดื่ม",
+        "description": "ชาเย็นหอมกลิ่นชาไทย หวานกำลังดี",
+        "popular": true,
+        "spicy": 0,
+        "sequence": 3,
+        "image": "https://owncloud.odoothaicloud.com/s/Zy5g2OV98XxaIRC/download"
+    },
+    {
+        "name": "ข้าวเหนียวมะม่วง",
+        "price": 80,
+        "category": "ของหวาน",
+        "description": "ข้าวเหนียวมะม่วงหวานฉ่ำ กะทิหอมมัน",
+        "popular": true,
+        "spicy": 0,
+        "sequence": 2,
+        "image": "https://owncloud.odoothaicloud.com/s/aKR1foIaOf8RIja/download"
+    }
+]

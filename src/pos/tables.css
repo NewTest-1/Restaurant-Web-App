@@ -1,0 +1,100 @@
+.tables-layout {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    color: white;
+}
+
+.tables-left {
+    flex: 2;
+}
+
+.tables-right {
+    flex: 1;
+    background: #0f1c2e;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tables-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.table-card {
+    width: 140px;
+    height: 110px;
+    border: 2px solid #27d17f;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.table-card.active {
+    background: #27d17f;
+    color: black;
+}
+
+.table-status
+{
+  font-size:16px;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+.table-status.available
+{
+  color:#22c55e;
+}
+
+.table-status.occupied
+{
+  color:#ef4444;
+}
+
+
+.receipt {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+}
+
+.receipt-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+}
+
+.receipt-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* .receipt-total span:last-child {
+    text-align: right;
+    min-width: 100px;
+} */
+
+.clear-btn {
+    width: 100%;
+    padding: 14px;
+    background: #3b82f6;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}

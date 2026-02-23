@@ -1,0 +1,62 @@
+# .github/workflows/deploy.yml
+# GitHub Actions - Auto Deploy
+
+name: Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: 📦 Install dependencies
+        run: npm ci
+      
+      - name: 🔨 Build
+        run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+      
+      - name: 🚀 Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}'
+          channelId: live
+          projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
+
+# วิธีตั้งค่า:
+# 1. ไปที่ GitHub Repository > Settings > Secrets and variables > Actions
+# 2. เพิ่ม secrets ต่อไปนี้:
+#    - VITE_FIREBASE_API_KEY
+#    - VITE_FIREBASE_AUTH_DOMAIN
+#    - VITE_FIREBASE_PROJECT_ID
+#    - VITE_FIREBASE_STORAGE_BUCKET
+#    - VITE_FIREBASE_MESSAGING_SENDER_ID
+#    - VITE_FIREBASE_APP_ID
+#    - FIREBASE_SERVICE_ACCOUNT (ได้จาก Firebase Console)
+# 3. Push code ไป GitHub
+# 4. Auto deploy ทุกครั้งที่ push!

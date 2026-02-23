@@ -1,0 +1,12 @@
+/* layout หลัก */
+.app-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* content scroll */
+.app-content {
+    flex: 1;
+    overflow: auto;
+}

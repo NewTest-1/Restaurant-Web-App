@@ -1,0 +1,35 @@
+{
+  "name": "thai-restaurant-app",
+  "version": "1.0.0",
+  "description": "Thai Restaurant Web Application with React and Firebase",
+  "private": true,
+  "dependencies": {
+    "firebase": "^10.7.1",
+    "firebase-tools": "^13.35.1",
+    "lucide-react": "^0.294.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.30.3",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.8"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && firebase deploy --only hosting"
+  },
+  "keywords": [
+    "react",
+    "firebase",
+    "restaurant",
+    "thai-food",
+    "web-app"
+  ],
+  "author": "Thai Restaurant Web Application",
+  "license": "MIT"
+}
