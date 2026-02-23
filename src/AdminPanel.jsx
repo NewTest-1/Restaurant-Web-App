@@ -2,62 +2,35 @@ import React from "react";
 import menuData from "./menuData.json";
 import { db } from "./firebase";
 
-import {
-  collection,
-  addDoc,
-  getDocs,
-  deleteDoc,
-  doc
-} from "firebase/firestore";
-
+import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 export default function AdminPanel({ reloadMenu }) {
 
   const importMenu = async () => {
-
     if (!confirm("Import menu ทั้งหมด?")) return;
-
     try {
-
       for (const item of menuData) {
-
         await addDoc(collection(db, "menus"), item);
-
         console.log("Added:", item.name);
       }
-
       alert("Import สำเร็จ");
-
       reloadMenu();
-
     } catch (error) {
-
       console.error(error);
-
       alert("Import failed");
     }
   };
 
   const deleteAllMenus = async () => {
-
     if (!confirm("ลบเมนูทั้งหมด?")) return;
-
     try {
-
       const snapshot = await getDocs(collection(db, "menus"));
-
       for (const document of snapshot.docs) {
-
         await deleteDoc(doc(db, "menus", document.id));
       }
-
       alert("ลบทั้งหมดแล้ว");
-
       reloadMenu();
-
     } catch (error) {
-
       console.error(error);
-
       alert("Delete failed");
     }
   };

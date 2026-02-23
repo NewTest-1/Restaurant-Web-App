@@ -1,5 +1,5 @@
 {
-  "name": "thai-restaurant-app",
+  "name": "restaurant-app",
   "version": "1.0.0",
   "description": "Thai Restaurant Web Application with React and Firebase",
   "private": true,
@@ -30,6 +30,6 @@
     "thai-food",
     "web-app"
   ],
-  "author": "Thai Restaurant Web Application",
+  "author": "Restaurant Web Application",
   "license": "MIT"
 }

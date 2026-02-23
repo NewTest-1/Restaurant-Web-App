@@ -4,7 +4,6 @@ import { db } from "./firebase";
 import menuData from "./menuData.json";
 
 function ImportButton() {
-
   const importData = async () => {
     try {
       const promises = menuData.map(item =>

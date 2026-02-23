@@ -4,30 +4,20 @@ import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, q
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
 // Firebase Configuration
-// ⚠️ แทนที่ด้วย Config ของคุณจาก Firebase Console
-// const firebaseConfig = {
-//   apiKey: "YOUR_API_KEY",
-//   authDomain: "YOUR_AUTH_DOMAIN",
-//   projectId: "YOUR_PROJECT_ID",
-//   storageBucket: "YOUR_STORAGE_BUCKET",
-//   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-//   appId: "YOUR_APP_ID"
-// };
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDHioxtnO1o0mXhvw269SPdomDa-d0KJME",
-//   authDomain: "restaurant-liff.firebaseapp.com",
-//   projectId: "restaurant-liff",
-//   storageBucket: "restaurant-liff.firebasestorage.app",
-//   messagingSenderId: "408302356731",
-//   appId: "1:408302356731:web:3384894dacb719430e885e",
-//   measurementId: "G-12G5NC0GFF"
-// };
-
 const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "restaurant-liff"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
+
+// const firebaseConfig = {
+//   apiKey: "...",
+//   authDomain: "...",
+//   projectId: "restaurant-liff"
+// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
