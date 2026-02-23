@@ -1,0 +1,39 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  frontend-dev:
+    image: node:18-alpine
+    container_name: restaurant-dev
+    working_dir: /app
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - restaurant-network
+
+networks:
+  restaurant-network:
+    driver: bridge
+
+# วิธีใช้งาน:
+# Production: docker-compose up -d frontend
+# Development: docker-compose --profile dev up frontend-dev
+
+# ตรวจสอบว่า firebase อยู่ใน container แล้ว
+# docker exec -it thai-restaurant-dev sh --> ls node_modules/firebase
+# docker-compose exec frontend-dev npm install qrcode uuid
+# docker-compose exec frontend-dev npm install firebase-tools
+
+# ตรวจสอบ tunnel 
+# docker rm -f cloudflared
+# docker restart cloudflared
+# docker-compose up -d cloudflared
+# docker logs cloudflared
+# docker logs cloudflared 2>&1 | findstr trycloudflare.com
